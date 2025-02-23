@@ -4,11 +4,15 @@ import { Button } from "@/components/ui/button";
 import { MessageCircleHeartIcon } from "lucide-react";
 import * as React from "react";
 
-export function BeginButton() {
+type Props = {
+  welcomeMessage: string;
+};
+
+export function BeginButton({ welcomeMessage }: Props) {
   const [hasBegun, setHasBegun] = React.useState(false);
 
   const handleBegin = () => {
-    const utterance = new window.SpeechSynthesisUtterance("welcome");
+    const utterance = new window.SpeechSynthesisUtterance(welcomeMessage);
     window.speechSynthesis.speak(utterance);
     setHasBegun(true);
     sessionStorage.setItem("hasBegun", "true");

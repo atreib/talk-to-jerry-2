@@ -3,10 +3,14 @@
 import * as React from "react";
 import { Message } from "./types";
 
-export function useChat() {
+type Props = {
+  welcomeMessage: string;
+};
+
+export function useChat({ welcomeMessage }: Props) {
   const [messages, setMessages] = React.useState<Array<Message>>([
     {
-      text: "Welcome! I'm Jerry. How can I help you today?",
+      text: welcomeMessage,
       sender: "jerry",
       timestamp: new Date(),
     },

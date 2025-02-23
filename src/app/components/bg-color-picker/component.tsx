@@ -7,7 +7,7 @@ type Props = {
 
 export function BackgroundColorPicker({ bgColor, changeBgColor }: Props) {
   return (
-    <div className="absolute top-0 right-0 m-2 bg-background/40 text-foregound rounded-lg p-2 z-10 shadow border border-border">
+    <div className="absolute top-32 right-0 m-2 bg-background/40 text-foregound rounded-lg p-2 z-10 shadow border border-border">
       <input
         type="color"
         value={bgColor}

@@ -12,11 +12,16 @@ import { DesktopChat } from "../chat/desktop-chat";
 import { useChat } from "../chat/hook";
 import { getAnswer } from "../chat/actions";
 import { Microphone } from "../chat/microphone";
+import { MobileCaption } from "../chat/mobile-caption";
 
-export function JerryScene() {
+type Props = {
+  welcomeMessage: string;
+};
+
+export function JerryScene({ welcomeMessage }: Props) {
   const { bgColor, changeBgColor } = useBgColor();
   const jerryController = useJerry();
-  const { messages, sendMessage } = useChat();
+  const { messages, sendMessage } = useChat({ welcomeMessage });
 
   const initialCamera = {
     position: [0, 1, 3],
@@ -80,7 +85,10 @@ export function JerryScene() {
         />
       </Canvas>
       <DesktopChat messages={messages} onMessageSend={askToJerry} />
-      <Microphone />
+      <MobileCaption
+        lastMessage={messages.filter((x) => x.sender === "jerry").at(-1)}
+      />
+      <Microphone onMessageSend={askToJerry} />
     </div>
   );
 }
