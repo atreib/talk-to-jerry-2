@@ -6,13 +6,13 @@ import { CameraProps, Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import { BackgroundColorPicker } from "../bg-color-picker/component";
 import { useBgColor } from "../bg-color-picker/hook";
-import { JerryModel } from "./model";
 import { useJerry } from "./hook";
 import { DesktopChat } from "../chat/desktop-chat";
 import { useChat } from "../chat/hook";
 import { getAnswer } from "../chat/actions";
 import { Microphone } from "../chat/microphone";
 import { MobileCaption } from "../chat/mobile-caption";
+import { JerryModel } from "./model";
 
 type Props = {
   welcomeMessage: string;

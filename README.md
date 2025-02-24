@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Talk to Jerry 🐭
 
-## Getting Started
+> A delightful AI-powered chat experience featuring Jerry, your friendly virtual companion built with modern web technologies and 3D graphics.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15.1-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.173-orange?style=flat-square&logo=three.js)](https://threejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-latest-black?style=flat-square)](https://ui.shadcn.com/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-412991?style=flat-square&logo=openai)](https://openai.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Interactive 3D Character**: Engage with Jerry, a charming 3D character brought to life using Three.js and React Three Fiber
+- **Voice Recognition**: Natural conversation through speech recognition capabilities using only Browser APIs
+- **Modern UI/UX**: Beautiful, responsive interface built with TailwindCSS and Radix UI components (with the help of shadcn/ui)
+- **Real-time Interactions**: Smooth, interactive animations and responses
+- **Type-Safe**: Built with TypeScript for robust development experience
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**
 
-## Learn More
+   ```bash
+   git clone https://github.com/atreib/talk-to-jerry.git
+   cd talk-to-jerry
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Set up environment variables**
 
-## Deploy on Vercel
+   ```bash
+   cp .env.sample .env
+   # Add your API keys and configuration
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🛠️ Technology Stack
+
+- **Framework**: Next.js 15.1 with React 19
+- **3D Graphics**: Three.js with React Three Fiber & Drei
+- **Styling**: TailwindCSS and Radix UI through shadcn/ui
+- **Voice Integration**: Browser APIs for speech recognition
+- **Form Handling**: React Hook Form with Zod validation
+- **UI Components**: Radix UI primitives through shadcn/ui
+- **Development**:
+  - TypeScript for type safety
+  - ESLint for code quality
+  - Turbopack for fast builds
+
+## 🎨 Architecture
+
+The project follows a modern, component-based architecture with:
+
+- `src/app`: Next.js app router
+- `src/components`: Reusable UI components
+- `src/lib`: Utility functions and shared logic
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Three.js community for 3D graphics inspiration
+- Next.js team for the amazing framework
+- All contributors and supporters
+
+---
+
+<p align="center">Made with ❤️ and lots of ☕️</p>
