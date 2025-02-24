@@ -13,6 +13,7 @@ import { getAnswer } from "../chat/actions";
 import { Microphone } from "../chat/microphone";
 import { MobileCaption } from "../chat/mobile-caption";
 import { JerryModel } from "./model";
+import { MobileChat } from "../chat/mobile-chat";
 
 type Props = {
   welcomeMessage: string;
@@ -85,6 +86,9 @@ export function JerryScene({ welcomeMessage }: Props) {
         />
       </Canvas>
       <DesktopChat messages={messages} onMessageSend={askToJerry} />
+      <div className="md:hidden fixed bottom-4 left-4 z-10">
+        <MobileChat messages={messages} onMessageSend={askToJerry} />
+      </div>
       <MobileCaption
         lastMessage={messages.filter((x) => x.sender === "jerry").at(-1)}
       />

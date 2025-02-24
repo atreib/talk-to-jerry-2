@@ -15,8 +15,11 @@ export function DesktopChat({ messages, onMessageSend }: Props) {
   const [inputValue, setInputValue] = React.useState("");
 
   const handleSubmit = async () => {
-    await onMessageSend(inputValue);
-    setInputValue("");
+    const trimmedInput = inputValue.trim();
+    if (trimmedInput) {
+      setInputValue("");
+      await onMessageSend(inputValue);
+    }
   };
 
   const scrollToBottom = () => {
@@ -59,32 +62,21 @@ export function DesktopChat({ messages, onMessageSend }: Props) {
         ))}
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="p-2 border-t border-border bg-background"
-      >
-        {/* {listening && (
-          <div className="mt-2 text-sm text-gray-300">
-            {transcript || "Listening..."}
-          </div>
-        )} */}
-        <div className="flex gap-2">
-          <Input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleSubmit();
-              }
-            }}
-            placeholder="Type your message..."
-          />
-          <Button type="submit">Send</Button>
-          {/* <MicrophoneButton /> */}
-        </div>
-      </form>
+      <div className="p-2 border-t border-border bg-background flex gap-2">
+        <Input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              handleSubmit();
+            }
+          }}
+          placeholder="Type your message..."
+        />
+        <Button onClick={handleSubmit}>Send</Button>
+      </div>
     </div>
   );
 }
