@@ -24,7 +24,10 @@ export function BeginButton({ welcomeMessage }: Props) {
     <div className="fixed inset-0 w-screen h-screen bg-black/80 flex items-center justify-center z-50">
       <div className="flex flex-col items-center justify-center gap-4">
         <p className="text-sm text-white">
-          Enable your sound before continuing...
+          Wait until you see Jerry in the background...
+        </p>
+        <p className="text-sm text-white">
+          Oh, and enable your sound before continuing!
         </p>
         <Button size="lg" onClick={handleBegin}>
           <MessageCircleHeartIcon className="w-4 h-4 mr-2" />
